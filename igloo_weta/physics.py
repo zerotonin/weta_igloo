@@ -109,7 +109,7 @@ def compute_burrow_physics(
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  THERMAL PENETRATION                    « how deep does it go? »   │
+# │  THERMAL PENETRATION                     « how deep does it go? »   │
 # └─────────────────────────────────────────────────────────────────────┘
 def thermal_penetration_depth(time_s: float) -> float:
     """Compute thermal penetration depth into stone.
@@ -128,7 +128,7 @@ def thermal_penetration_depth(time_s: float) -> float:
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  ODE INTEGRATION                   « forward Euler, old reliable » │
+# │  ODE INTEGRATION                    « forward Euler, old reliable » │
 # └─────────────────────────────────────────────────────────────────────┘
 def simulate_burrow_temperature(
     k: float,
@@ -216,7 +216,7 @@ def simulate_24h_steady_state(
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  DIAGNOSTICS                        « phase lag & amplitude »      │
+# │  DIAGNOSTICS                         « phase lag & amplitude »      │
 # └─────────────────────────────────────────────────────────────────────┘
 def compute_phase_lag(T_in: np.ndarray, T_out: np.ndarray) -> tuple[int, float]:
     """Compute phase lag via circular cross-correlation.

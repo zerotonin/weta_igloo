@@ -29,7 +29,7 @@ import pandas as pd
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  DATA BUNDLE                          « one object to rule them »  │
+# │  DATA BUNDLE                          « one object to rule them »   │
 # └─────────────────────────────────────────────────────────────────────┘
 @dataclass
 class DataBundle:
@@ -53,7 +53,7 @@ class DataBundle:
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  PATH RESOLUTION                       « finding the goods »       │
+# │  PATH RESOLUTION                       « finding the goods »        │
 # └─────────────────────────────────────────────────────────────────────┘
 def _default_data_dir() -> Path:
     """Return ``<package_root>/../data`` as the default data directory."""
@@ -81,7 +81,7 @@ def _resolve(data_dir: Optional[str], filename: str) -> Path:
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  LOADERS                             « reading the bit stream »    │
+# │  LOADERS                             « reading the bit stream »     │
 # └─────────────────────────────────────────────────────────────────────┘
 def load_hourly_24h(data_dir: Optional[str] = None) -> pd.DataFrame:
     """Load the 24-hour hourly average temperatures per rock.
@@ -218,7 +218,7 @@ def summarise_species(morph_df: pd.DataFrame) -> dict:
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  BUNDLE LOADER                           « the whole enchilada »   │
+# │  BUNDLE LOADER                           « the whole enchilada »    │
 # └─────────────────────────────────────────────────────────────────────┘
 def load_all(data_dir: Optional[str] = None) -> DataBundle:
     """Load every dataset and return a single :class:`DataBundle`.

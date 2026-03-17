@@ -43,7 +43,7 @@ from .physics import (
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  RESULT CONTAINER                         « the whole dossier »    │
+# │  RESULT CONTAINER                         « the whole dossier »     │
 # └─────────────────────────────────────────────────────────────────────┘
 @dataclass
 class RockResult:
@@ -121,7 +121,7 @@ class RockResult:
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  INCUBATOR VALIDATION               « the passive control »       │
+# │  INCUBATOR VALIDATION               « the passive control »         │
 # └─────────────────────────────────────────────────────────────────────┘
 @dataclass
 class IncubatorResult:
@@ -182,7 +182,7 @@ def fit_incubator(incubator_df: pd.DataFrame) -> IncubatorResult:
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  PER-ROCK FITTING                       « the main event »         │
+# │  PER-ROCK FITTING                       « the main event »          │
 # └─────────────────────────────────────────────────────────────────────┘
 def fit_single_rock(
     rock_id: int,

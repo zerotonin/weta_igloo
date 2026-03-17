@@ -26,7 +26,7 @@ from .fitting import RockResult
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  ALLOMETRIC METABOLIC RATE            « scaling the fire within »  │
+# │  ALLOMETRIC METABOLIC RATE             « scaling the fire within »  │
 # └─────────────────────────────────────────────────────────────────────┘
 def rmr_at_temperature(mass_g: float, temp_c: float) -> float:
     """Estimate resting metabolic rate at a given temperature.
@@ -104,7 +104,7 @@ def compute_species_rmr(species_stats: dict) -> dict[str, SpeciesRMR]:
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  SHELL THICKNESS SWEEP              « how thick is the igloo? »    │
+# │  SHELL THICKNESS SWEEP               « how thick is the igloo? »    │
 # └─────────────────────────────────────────────────────────────────────┘
 @dataclass
 class ThicknessPoint:

@@ -32,7 +32,7 @@ matplotlib.rcParams["svg.fonttype"] = "none"  # keep text as <text>, not paths
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  HELPERS                               « utility belt »            │
+# │  HELPERS                               « utility belt »             │
 # └─────────────────────────────────────────────────────────────────────┘
 def _setup_style() -> None:
     """Apply consistent rcParams for all figures."""
@@ -84,7 +84,7 @@ def _save_csv(df: pd.DataFrame, stem: str, output_dir: str) -> str:
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  FIGURE 1: INCUBATOR VALIDATION     « the passive sanity check »   │
+# │  FIGURE 1: INCUBATOR VALIDATION      « the passive sanity check »   │
 # └─────────────────────────────────────────────────────────────────────┘
 def plot_incubator(
     inc: IncubatorResult,
@@ -130,7 +130,7 @@ def plot_incubator(
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  FIGURE 2: PER-ROCK 24H FITS        « the diurnal gallery »       │
+# │  FIGURE 2: PER-ROCK 24H FITS          « the diurnal gallery »       │
 # └─────────────────────────────────────────────────────────────────────┘
 def plot_per_rock_fits(
     results: list[RockResult],
@@ -192,7 +192,7 @@ def plot_per_rock_fits(
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  FIGURE 3: RESIDUALS                « the weta signal »            │
+# │  FIGURE 3: RESIDUALS                 « the weta signal »            │
 # └─────────────────────────────────────────────────────────────────────┘
 def plot_residuals(
     results: list[RockResult],
@@ -251,7 +251,7 @@ def plot_residuals(
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  FIGURE 4: CROSSOVER                « heating or cooling? »        │
+# │  FIGURE 4: CROSSOVER                 « heating or cooling? »        │
 # └─────────────────────────────────────────────────────────────────────┘
 def plot_crossover(
     results: list[RockResult],
@@ -364,7 +364,7 @@ def plot_crossover(
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  FIGURE 5: SPECIES SENSITIVITY    « how thick is the igloo? »      │
+# │  FIGURE 5: SPECIES SENSITIVITY     « how thick is the igloo? »      │
 # └─────────────────────────────────────────────────────────────────────┘
 def plot_species_sensitivity(
     results: list[RockResult],
@@ -470,7 +470,7 @@ def plot_species_sensitivity(
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  RESULTS TABLE                      « the final scoreboard »       │
+# │  RESULTS TABLE                       « the final scoreboard »       │
 # └─────────────────────────────────────────────────────────────────────┘
 def export_results_csv(
     results: list[RockResult],
