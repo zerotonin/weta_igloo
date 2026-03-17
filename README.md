@@ -2,8 +2,8 @@
 
 ```
  ╔═══════════════════════════════════════════════════════════════╗
- ║  IGLOO WĒTĀ — Thermal model for burrow heat exchange         ║
- ║  « model. fit. predict. science. »                           ║
+ ║  IGLOO WĒTĀ — Thermal model for burrow heat exchange          ║
+ ║  « model. fit. predict. science. »                            ║
  ╚═══════════════════════════════════════════════════════════════╝
 ```
 
