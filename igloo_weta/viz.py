@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+ #!/usr/bin/env python3
 """
  ┌─────────────────────────────────────────────────────────────────────┐
  │  VIZ                                    « painting the picture »    │
@@ -32,7 +32,7 @@ matplotlib.rcParams["svg.fonttype"] = "none"  # keep text as <text>, not paths
 
 
 # ┌─────────────────────────────────────────────────────────────────────┐
-# │  HELPERS                               « utility belt »             │
+# │  HELPERS                                « utility belt »            │
 # └─────────────────────────────────────────────────────────────────────┘
 def _setup_style() -> None:
     """Apply consistent rcParams for all figures."""
@@ -331,6 +331,21 @@ def plot_crossover(
     ax.plot(Tc_corr, 0, "o", ms=12, color="#ff7f0e", markeredgecolor="k",
             zorder=6)
     ax.axhline(0, color="k", lw=0.8)
+
+    # ── quadrant shading: heats left-above, cools right-below ────────
+    ylims_c = ax.get_ylim()
+    ax.fill_between(
+        [xsp[0], Tc_corr], 0, ylims_c[1], alpha=0.04, color="red", zorder=0,
+    )
+    ax.fill_between(
+        [Tc_corr, xsp[-1]], ylims_c[0], 0, alpha=0.04, color="blue", zorder=0,
+    )
+    ax.set_ylim(ylims_c)
+    ax.text(0.03, 0.97, "WĒTĀ HEATS", transform=ax.transAxes, fontsize=8,
+            color="#d62728", va="top", fontweight="bold", alpha=0.6)
+    ax.text(0.97, 0.03, "WĒTĀ COOLS", transform=ax.transAxes, fontsize=8,
+            color="#1f77b4", va="bottom", ha="right", fontweight="bold", alpha=0.6)
+
     ax.set_xlabel("T_out (°C)")
     ax.set_ylabel("ΔT (°C)")
     ax.set_title("C. Species-level crossover (excl. R22)")
@@ -350,6 +365,23 @@ def plot_crossover(
                 label=f"R{r.rock}", alpha=0.8)
     ax.axhline(0, color="k", lw=0.8)
     ax.axvline(Tc_corr, color="#d62728", lw=1, ls="--", alpha=0.5)
+
+    # ── quadrant shading: heats left-above, cools right-below ────────
+    ylims_d = ax.get_ylim()
+    ax.fill_between(
+        [T_range[0], Tc_corr], 0, ylims_d[1],
+        alpha=0.04, color="red", zorder=0,
+    )
+    ax.fill_between(
+        [Tc_corr, T_range[-1]], ylims_d[0], 0,
+        alpha=0.04, color="blue", zorder=0,
+    )
+    ax.set_ylim(ylims_d)
+    ax.text(0.03, 0.97, "WĒTĀ HEATS", transform=ax.transAxes, fontsize=8,
+            color="#d62728", va="top", fontweight="bold", alpha=0.6)
+    ax.text(0.97, 0.03, "WĒTĀ COOLS", transform=ax.transAxes, fontsize=8,
+            color="#1f77b4", va="bottom", ha="right", fontweight="bold", alpha=0.6)
+
     ax.set_xlabel("T_out (°C)")
     ax.set_ylabel("Q_wētā (mW)")
     ax.set_title("D. Predicted metabolic output vs T_out")
